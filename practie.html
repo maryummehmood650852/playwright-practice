@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Playwright Actions Demo</title>
+</head>
+
+<body>
+
+    <h1>Playwright Actions Demo</h1>
+
+    <!-- Fill + Press -->
+    <label for="search">Search Product:</label>
+    <input id="search" placeholder="Enter product">
+    <button id="searchBtn">Search</button>
+
+    <p id="result"></p>
+
+    <hr>
+
+    <!-- Checkbox -->
+    <label>
+        <input type="checkbox" id="terms">
+        I agree to the terms
+    </label>
+
+    <hr>
+
+    <!-- Hover -->
+    <button id="hoverButton"
+            onmouseover="this.innerText='Hovered!'"
+            onmouseout="this.innerText='Hover over me'">
+        Hover over me
+    </button>
+
+    <hr>
+
+    <!-- Focus -->
+    <input id="focusInput" placeholder="Click or focus here">
+
+    <hr>
+
+    <!-- Dropdown -->
+    <label for="product">Choose Product:</label>
+
+    <select id="product">
+        <option value="">Select</option>
+        <option value="laptop">Laptop</option>
+        <option value="phone">Phone</option>
+        <option value="tablet">Tablet</option>
+    </select>
+
+    <hr>
+
+    <!-- File Upload -->
+    <label for="file">Upload File:</label>
+    <input type="file" id="file">
+
+    <hr>
+
+    <!-- Click -->
+    <button id="loginButton">Login</button>
+
+    <p id="message"></p>
+
+    <script>
+
+        document.getElementById('searchBtn').onclick = function () {
+            const value = document.getElementById('search').value;
+            document.getElementById('result').innerText =
+                'You searched for: ' + value;
+        };
+
+        document.getElementById('loginButton').onclick = function () {
+            document.getElementById('message').innerText =
+                'Login button clicked!';
+        };
+
+    </script>
+
+</body>
+</html>
