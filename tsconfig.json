@@ -1,6 +1,0 @@
-{
-  "compilerOptions": {
-    "types": ["node", "@playwright/test"],
-    "target": "ESNext"
-  }
-}
