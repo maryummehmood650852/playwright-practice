@@ -10,7 +10,8 @@
   "devDependencies": {
     "@playwright/test": "^1.62.1",
     "@types/jira-client": "^7.1.9",
-    "@types/node": "^26.5.1"
+    "@types/node": "^26.5.1",
+    "playwright-zephyr": "^1.2.0"
   },
   "dependencies": {
     "dotenv": "^17.4.2",
