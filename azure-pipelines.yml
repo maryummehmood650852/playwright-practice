@@ -1,23 +1,32 @@
 trigger:
   - main
+  - master
 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+  # 1. Code ko Checkout karna (Line 12)
+  - checkout: self
+    displayName: 'Checkout Code'
+
+  # 2. Node.js Setup karna (Line 13-16)
   - task: NodeTool@1
     inputs:
       versionSpec: '20.x'
-    displayName: '1. Node.js Environment Setup'
+    displayName: 'Setup Node.js'
 
+  # 3. Dependencies global install karna bina package.json ke error ke (Line 17-18)
   - script: |
-      npm ci
-    displayName: '2. Node Modules Install'
+      npm install @playwright/test
+    displayName: 'Install Dependencies'
 
+  # 4. Playwright ke Browsers Install karna (Line 19-20)
   - script: |
       npx playwright install --with-deps
-    displayName: '3. Playwright Browsers Download'
+    displayName: 'Install Playwright Browsers'
 
+  # 5. Playwright Tests ko Run karna (Line 21-22)
   - script: |
       npx playwright test
-    displayName: '4. Run Automated Test Cases'
+    displayName: 'Run Playwright Tests'
